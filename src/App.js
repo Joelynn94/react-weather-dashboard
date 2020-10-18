@@ -7,7 +7,7 @@ import Weather from './components/Weather'
 
 function App() {
 
-  const [results, setReults] = useState({
+  const [results, setResults] = useState({
     cityName: '',
     country: '',
     items: []
@@ -27,20 +27,27 @@ function App() {
         units: 'imperial',
       }
     })
-  
-    const objToArray = [...Object.entries(response.data.list)]
-    console.log(typeof objToArray, objToArray)
 
     console.log({
       cityName: response.data.city.name,
       country: response.data.city.country,
       items: response.data.list
     })
-    setReults({
+    setResults({
       cityName: response.data.city.name,
       country: response.data.city.country,
       items: response.data.list
     })
+
+    // console.log(response.data.list.map((weatherItem) => {
+    //   return {
+    //     date: weatherItem.dt,
+    //     date_text: weatherItem.dt_txt,
+    //     weather: weatherItem.main,
+    //     weatherDetails: weatherItem.weather[0],
+    //     wind: weatherItem.wind
+    //   }
+    // }))
 
   }
 
@@ -48,7 +55,9 @@ function App() {
   return (
     <div>
       <Search getQuerySearch={(search) => setQuery(search)}/>
-      <Weather cityName={results.cityName} country={results.country} result={results} />
+
+        <Weather cityName={results.cityName} country={results.country} weather={results.items} />
+
     </div>
   );
 }
