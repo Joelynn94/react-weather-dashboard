@@ -44,8 +44,8 @@ function Search({ getQuerySearch }) {
             </InputAdornment>
           }
         />
-        {search === '' 
-        ? <Button 
+        {(search === '') 
+        ? (<Button 
             variant="contained" 
             color="primary"
             className="search-button" 
@@ -55,18 +55,17 @@ function Search({ getQuerySearch }) {
          >
           Search
           </Button>
-        : <Button 
-            variant="contained" 
-            color="primary"
-            className="search-button" 
-            type="submit" 
-            onClick={formSubmit}
-            
-            disableElevation
-          >  
-            Search
-          </Button>
-        }
+        ) : ( <Button 
+              variant="contained" 
+              color="primary"
+              className="search-button" 
+              type="submit" 
+              onClick={formSubmit}
+              disableElevation
+              >  
+                Search
+              </Button>
+        )}
       </FormControl>
     </section>
   )

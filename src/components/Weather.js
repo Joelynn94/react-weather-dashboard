@@ -1,31 +1,43 @@
 import React from 'react'
-import { Container, Button } from '@material-ui/core';
+import { Container, Button, Typography } from '@material-ui/core';
 
 function Weather({cityName, country, weather}) {
 
-  const arrayResults = weather
-  console.log(typeof arrayResults, arrayResults)
+  const dateBuilder = (d) => {
+    const dt = new Date(d)
+    const year = dt.getFullYear()
+    const month = dt.getMonth()
+    const date = dt.getDate()
+    const day = dt.getDay()
+    const time = dt.getTime()
+
+    return `${day} ${date} ${month} ${year} ${time}`
+  }  
 
   return (
-    <Container maxWidth="sm">
-      <h2>{cityName}</h2>
-      <h5>{country}</h5>
-      <Button variant="contained" color="primary">Hello World</Button>
-      {weather.map((obj) => (
-        <div>
-          <h3>{obj.dt_txt}</h3>
-          <p>{`Temp ${obj.main.temp}`}</p>
-
-          {obj.weather.map((desc) => {
+    <Container>
+      {weather.map((weatherItem) => (
+        <section>
+          {weatherItem.weather.map((item) => {
             return <div>
-              <p>{`Description ${desc.description}`}</p>
-              <img src={process.env.PUBLIC_URL + `/weather-icons/${desc.icon}.png`} alt={desc.description}/>
+              <img src={process.env.PUBLIC_URL + `/weather-icons/${item.icon}.png`} alt={item.description}/>
+              <Typography variant='body1'>
+                {`${item.description}`}
+              </Typography>
             </div>
           })}
 
-        </div>
+          <Typography variant='h2'>
+            {`${Math.round(weatherItem.main.temp)}\u00b0F`}
+          </Typography>
+          <Typography variant='h3'>
+            {weatherItem.dt}
+          </Typography>
+          <Typography variant='h4'>
+            {`${cityName}, ${country}`}
+          </Typography>
+        </section>
       ))}
-
     </Container>
   )
 }
