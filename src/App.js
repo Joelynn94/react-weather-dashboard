@@ -5,7 +5,7 @@ import 'fontsource-roboto';
 
 import './App.css';
 import Search from './components/Search'
-import Weather from './components/Weather'
+import Forecast from './components/Forecast'
 import TodaysHighlights from './components/TodayHighlights'
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
       <Container>
         <Search getQuerySearch={(search) => setQuery(search)}/>
         <TodaysHighlights weather={results.weatherDetails}/>
-        <Weather cityName={results.cityName} country={results.country} weather={results.weatherDetails} />
+        <Forecast cityName={results.cityName} country={results.country} weather={results.weatherDetails} />
       </Container>
     </main>
   );

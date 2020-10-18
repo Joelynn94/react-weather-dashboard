@@ -1,16 +1,25 @@
 import React from 'react'
-import { Card, CardContent, Typography } from '@material-ui/core'
+import { Card, CardContent, CardMedia, Typography } from '@material-ui/core'
 
-function ForecastCard() {
+function ForecastCard({img, description, temp, date, city, country}) {
   return (
     <>
       <Card variant='outlined'>
         <CardContent>
-          <Typography variant="h5">
-            {title}
+          <CardMedia 
+            component="img"
+            alt={description}
+            image={img}
+            title={description}
+          />
+          <Typography variant="h2">
+            {temp}
           </Typography>
           <Typography variant="h3">
-            {stat}
+            {date}
+          </Typography>
+          <Typography variant='h4'>
+            {`${city}, ${country}`}
           </Typography>
         </CardContent>
       </Card>
