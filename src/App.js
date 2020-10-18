@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+import { Container } from '@material-ui/core';
+import 'fontsource-roboto';
 
 import './App.css';
 import Search from './components/Search'
@@ -10,7 +12,7 @@ function App() {
   const [results, setResults] = useState({
     cityName: '',
     country: '',
-    items: []
+    weatherDetails: []
   })
   const [query, setQuery] = useState('')
 
@@ -31,34 +33,23 @@ function App() {
     console.log({
       cityName: response.data.city.name,
       country: response.data.city.country,
-      items: response.data.list
+      weatherDetails: response.data.list
     })
     setResults({
       cityName: response.data.city.name,
       country: response.data.city.country,
-      items: response.data.list
+      weatherDetails: response.data.list
     })
-
-    // console.log(response.data.list.map((weatherItem) => {
-    //   return {
-    //     date: weatherItem.dt,
-    //     date_text: weatherItem.dt_txt,
-    //     weather: weatherItem.main,
-    //     weatherDetails: weatherItem.weather[0],
-    //     wind: weatherItem.wind
-    //   }
-    // }))
-
   }
 
 
   return (
-    <div>
-      <Search getQuerySearch={(search) => setQuery(search)}/>
-
-        <Weather cityName={results.cityName} country={results.country} weather={results.items} />
-
-    </div>
+    <main>
+      <Container>
+        <Search getQuerySearch={(search) => setQuery(search)}/>
+        <Weather cityName={results.cityName} country={results.country} weather={results.weatherDetails} />
+      </Container>
+    </main>
   );
 }
 
