@@ -34,7 +34,12 @@ function App() {
   }
 
   useEffect(() => {
-    fetchWeather(query)
+    if(query === ''){
+      console.log('No query has been made')
+    }
+    else {
+      fetchWeather(query)
+    }
   }, [query])
 
   return (
