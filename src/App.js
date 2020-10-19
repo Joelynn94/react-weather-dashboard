@@ -3,7 +3,6 @@ import axios from 'axios'
 import { Container, Grid } from '@material-ui/core';
 import 'fontsource-roboto';
 
-import './App.css';
 import Search from './components/Search'
 import Forecast from './components/Forecast'
 import TodaysHighlights from './components/TodayHighlights'
