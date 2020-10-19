@@ -40,7 +40,7 @@ function App() {
     else {
       fetchWeather(query)
     }
-  }, [query])
+  }, [])
 
   return (
     <main>
