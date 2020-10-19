@@ -5,6 +5,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   '@global': {
+    '.search-section': {
+      marginTop: '5rem'
+    },
+    '.search-form': {
+      width: '80%'
+    },
     '.search-button': {
       marginTop: '1rem'
     },
@@ -27,8 +33,8 @@ function Search({ getQuerySearch }) {
   }
 
   return (
-    <section>
-      <FormControl>
+    <section className="search-section">
+      <FormControl className='search-form'>
         <InputLabel 
           htmlFor="input-with-icon-adornment"
         >

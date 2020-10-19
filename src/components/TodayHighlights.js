@@ -1,7 +1,7 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
-import HighlightCard from './HighlightCard'
+import { Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import HighlightCard from './HighlightCard'
 
 const useStyles = makeStyles({
   '@global': {
@@ -16,7 +16,14 @@ function TodayHighlights({ weather }) {
 
   return (
     <section className='highlights'>
-      <h1>Today's Highlights</h1>
+      {(weather.length > 0)
+        ? ( <Typography variant="h2" className='heading'>
+              Today's Highlights
+            </Typography>
+        ) : ( <Typography variant="h2" className='heading'>
+                No data to show... please try searching for a city
+              </Typography>)
+      }
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} lg={4}>
           {(weather.length > 0)

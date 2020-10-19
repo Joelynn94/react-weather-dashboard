@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardContent, CardMedia, Typography } from '@material-ui/core'
 
-function ForecastCard({img, desc, temp, date, city, country}) {
+function CurrentWeatherCard({img, desc, temp, date, city, country}) {
   return (
     <>
       <Card variant='outlined'>
@@ -30,4 +30,4 @@ function ForecastCard({img, desc, temp, date, city, country}) {
   )
 }
 
-export default ForecastCard
+export default CurrentWeatherCard

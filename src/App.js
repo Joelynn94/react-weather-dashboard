@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import { Container } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import 'fontsource-roboto';
 
 import './App.css';
 import Search from './components/Search'
 import Forecast from './components/Forecast'
 import TodaysHighlights from './components/TodayHighlights'
+import CurrentWeather from './components/CurrentWeather';
 
 function App() {
 
@@ -45,9 +46,16 @@ function App() {
   return (
     <main>
       <Container>
-        <Search getQuerySearch={(search) => setQuery(search)}/>
-        <TodaysHighlights weather={results.weatherDetails}/>
-        <Forecast cityName={results.cityName} country={results.country} weather={results.weatherDetails} />
+        <Grid container space={2}>
+          <Grid item xs={12} md={3} lg={4}>
+            <Search getQuerySearch={(search) => setQuery(search)} />
+            <CurrentWeather cityName={results.cityName} country={results.country} weather={results.weatherDetails} />
+          </Grid>
+          <Grid item xs={12} md={9} lg={8}>
+            <TodaysHighlights weather={results.weatherDetails} />
+            <Forecast cityName={results.cityName} country={results.country} weather={results.weatherDetails} />
+          </Grid>
+        </Grid>
       </Container>
     </main>
   );

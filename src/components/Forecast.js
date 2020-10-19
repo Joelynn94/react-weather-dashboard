@@ -1,31 +1,36 @@
 import React from 'react'
-import { Container, Grid, Button, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
 
 import ForecastCard from './ForecastCard'
 
+const useStyles = makeStyles({
+  '@global': {
+    '.heading': {
+      marginTop: '3rem',
+      marginBottom: '1rem'
+    },
+  }
+});
+
 function Weather({cityName, country, weather}) {
-
-  const dateBuilder = (d) => {
-    const dt = new Date(d)
-    const year = dt.getFullYear()
-    const month = dt.getMonth()
-    const date = dt.getDate()
-    const day = dt.getDay()
-    const time = dt.getTime()
-
-    return `${day} ${date} ${month} ${year} ${time}`
-  }  
+  useStyles()
 
   return (
     <section>
-      <h1>Forecast</h1>
+      {(weather.length > 0)
+      ? (<Typography variant="h2" className='heading'>
+          Forecast
+      </Typography>
+        ) : ('')
+      }
       <Grid container spacing={2}> 
         {weather.map((weatherItem) => (
           weatherItem.weather.map((item, index) => (
             <Grid item xs={12} md={6} lg={4}> 
               <ForecastCard 
                 img={process.env.PUBLIC_URL + `/weather-icons/${item.icon}.png`} 
-                description={`${item.description}`}
+                desc={`${item.description}`}
                 temp={`${Math.round(weatherItem.main.temp)}\u00b0F`}
                 date={weatherItem.dt}
                 city={cityName}
