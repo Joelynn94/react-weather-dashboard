@@ -40,7 +40,7 @@ function App() {
   return (
     <main>
       <Container>
-        <Grid container space={2}>
+        <Grid container spacing={3}>
           <Grid item xs={12} md={3} lg={4}>
             <Search getQuerySearch={(search) => setQuery(search)} />
             <CurrentWeather cityName={results.cityName} country={results.country} weather={results.weatherDetails} />

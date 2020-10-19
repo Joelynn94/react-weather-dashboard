@@ -9,7 +9,7 @@ const useStyles = makeStyles({
       marginTop: '5rem'
     },
     '.search-form': {
-      width: '80%'
+      width: '100%'
     },
     '.search-button': {
       marginTop: '1rem'

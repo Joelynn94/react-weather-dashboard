@@ -6,7 +6,6 @@ const useStyles = makeStyles({
   '@global': {
     '.current-weather': {
       marginTop: '3rem',
-      width: '80%'
     },
   }
 });
