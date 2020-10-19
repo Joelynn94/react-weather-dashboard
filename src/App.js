@@ -18,28 +18,22 @@ function App() {
   })
   const [query, setQuery] = useState('')
 
-  const fetchWeather = async (query) => {
-    const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${process.env.REACT_APP_API_KEY}`
-  
-    const response = await axios.get(URL, {
-      params: {
-        units: 'imperial',
-      }
-    })
-    setResults({
-      cityName: response.data.city.name,
-      country: response.data.city.country,
-      weatherDetails: response.data.list
-    })
-  }
-
   useEffect(() => {
-    if(query === ''){
-      console.log('No query has been made')
+    const fetchWeather = async () => {
+      const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${process.env.REACT_APP_API_KEY}`
+    
+      const response = await axios.get(URL, {
+        params: {
+          units: 'imperial',
+        }
+      })
+      setResults({
+        cityName: response.data.city.name,
+        country: response.data.city.country,
+        weatherDetails: response.data.list
+      })
     }
-    else {
-      fetchWeather(query)
-    }
+    fetchWeather()
   }, [])
 
   return (
