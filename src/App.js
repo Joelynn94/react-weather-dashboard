@@ -35,7 +35,7 @@ function App() {
 
   useEffect(() => {
     fetchWeather(query)
-  }, [query, results])
+  }, [query])
 
   return (
     <main>
