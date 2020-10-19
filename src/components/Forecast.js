@@ -16,6 +16,16 @@ const useStyles = makeStyles({
 function Weather({cityName, country, weather}) {
   useStyles()
 
+  const getDate = (dateText) => {
+    let options = {
+      year: 'numeric', month: 'numeric', day: 'numeric',
+      hour: 'numeric', minute: 'numeric', second: 'numeric', 
+      hour12: false
+    };
+    const date = new Date(dateText)
+    return new Intl.DateTimeFormat('en-US', options).format(date)
+  }
+
   return (
     <section>
       {(weather.length > 0)
@@ -32,7 +42,7 @@ function Weather({cityName, country, weather}) {
                 img={process.env.PUBLIC_URL + `/weather-icons/${item.icon}.png`} 
                 desc={`${item.description}`}
                 temp={`${Math.round(weatherItem.main.temp)}\u00b0F`}
-                date={weatherItem.dt}
+                date={getDate(weatherItem.dt_txt)}
                 city={cityName}
                 country={country}
                 key={index}
