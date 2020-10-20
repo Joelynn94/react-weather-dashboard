@@ -19,18 +19,23 @@ function App() {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${process.env.REACT_APP_API_KEY}`
+
+      try {
+        const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${process.env.REACT_APP_API_KEY}`
     
-      const response = await axios.get(URL, {
-        params: {
-          units: 'imperial',
-        }
-      })
-      setResults({
-        cityName: response.data.city.name,
-        country: response.data.city.country,
-        weatherDetails: response.data.list
-      })
+        const response = await axios.get(URL, {
+          params: {
+            units: 'imperial',
+          }
+        })
+        setResults({
+          cityName: response.data.city.name,
+          country: response.data.city.country,
+          weatherDetails: response.data.list
+        })
+      } catch (error) {
+        console.log(error)
+      }
     }
     fetchWeather()
   }, [query])
