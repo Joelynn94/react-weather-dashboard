@@ -23,9 +23,7 @@ function Search({ getQuerySearch }) {
   const [search, setSearch] = useState('')
 
   const searchInput = (input) => {
-    if(!search === '') {
-      setSearch(input)
-    }
+    setSearch(input)
   }
 
   const formSubmit = (e) => {
