@@ -1,26 +1,23 @@
 {
   "files": {
-    "main.css": "/react-weather-dashboard/static/css/main.6b171aae.chunk.css",
-    "main.js": "/react-weather-dashboard/static/js/main.a23cba18.chunk.js",
-    "main.js.map": "/react-weather-dashboard/static/js/main.a23cba18.chunk.js.map",
+    "main.js": "/react-weather-dashboard/static/js/main.a637352b.chunk.js",
+    "main.js.map": "/react-weather-dashboard/static/js/main.a637352b.chunk.js.map",
     "runtime-main.js": "/react-weather-dashboard/static/js/runtime-main.97c7b5bc.js",
     "runtime-main.js.map": "/react-weather-dashboard/static/js/runtime-main.97c7b5bc.js.map",
     "static/css/2.e938453a.chunk.css": "/react-weather-dashboard/static/css/2.e938453a.chunk.css",
-    "static/js/2.59e65f71.chunk.js": "/react-weather-dashboard/static/js/2.59e65f71.chunk.js",
-    "static/js/2.59e65f71.chunk.js.map": "/react-weather-dashboard/static/js/2.59e65f71.chunk.js.map",
+    "static/js/2.86b0e51f.chunk.js": "/react-weather-dashboard/static/js/2.86b0e51f.chunk.js",
+    "static/js/2.86b0e51f.chunk.js.map": "/react-weather-dashboard/static/js/2.86b0e51f.chunk.js.map",
     "index.html": "/react-weather-dashboard/index.html",
-    "precache-manifest.d757722d4298d66374e376ac338147a7.js": "/react-weather-dashboard/precache-manifest.d757722d4298d66374e376ac338147a7.js",
+    "precache-manifest.27d375256cce2d3800b7b96665ea674f.js": "/react-weather-dashboard/precache-manifest.27d375256cce2d3800b7b96665ea674f.js",
     "service-worker.js": "/react-weather-dashboard/service-worker.js",
     "static/css/2.e938453a.chunk.css.map": "/react-weather-dashboard/static/css/2.e938453a.chunk.css.map",
-    "static/css/main.6b171aae.chunk.css.map": "/react-weather-dashboard/static/css/main.6b171aae.chunk.css.map",
-    "static/js/2.59e65f71.chunk.js.LICENSE.txt": "/react-weather-dashboard/static/js/2.59e65f71.chunk.js.LICENSE.txt",
+    "static/js/2.86b0e51f.chunk.js.LICENSE.txt": "/react-weather-dashboard/static/js/2.86b0e51f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/react-weather-dashboard/static/media/roboto-vietnamese-400-normal.a8be5b46.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.97c7b5bc.js",
     "static/css/2.e938453a.chunk.css",
-    "static/js/2.59e65f71.chunk.js",
-    "static/css/main.6b171aae.chunk.css",
-    "static/js/main.a23cba18.chunk.js"
+    "static/js/2.86b0e51f.chunk.js",
+    "static/js/main.a637352b.chunk.js"
   ]
 }
