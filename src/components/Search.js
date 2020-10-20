@@ -22,9 +22,15 @@ function Search({ getQuerySearch }) {
 
   const [search, setSearch] = useState('')
 
-  const searchInput = (input) => {
-    if(!search === '') {
-      setSearch(input)
+  const handleSearchInput = (e) => {
+    setSearch(e)
+  }
+
+  const handleKeyPress = (e) => {
+    e.preventDefault()
+    if(e.key === 'Enter') {
+      getQuerySearch(search)
+      setSearch('')
     }
   }
 
@@ -45,7 +51,7 @@ function Search({ getQuerySearch }) {
         <Input
           id="input-with-icon-adornment"
           value={search}
-          onChange={(e) => searchInput(e.target.value)}
+          onChange={(e) => handleSearchInput(e.target.value)}
           startAdornment={
             <InputAdornment position="start">
               <SearchOutlined />
@@ -59,6 +65,7 @@ function Search({ getQuerySearch }) {
             className="search-button" 
             type="submit" 
             onClick={formSubmit}
+            onSubmit={handleKeyPress}
             disabled
          >
           Search
@@ -69,6 +76,7 @@ function Search({ getQuerySearch }) {
               className="search-button" 
               type="submit" 
               onClick={formSubmit}
+              onSubmit={handleKeyPress}
               disableElevation
               >  
                 Search

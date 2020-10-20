@@ -33,7 +33,7 @@ function TodayHighlights({ weather }) {
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           {(weather.length > 0)
-            ? (<HighlightCard title='Wind Speed' stat={`${weather[0].wind.speed}mph`}/>
+            ? (<HighlightCard title='Wind Speed' stat={`${Math.round(weather[0].wind.speed)}mph`}/>
             ) : ('')
           }
         </Grid>
@@ -45,19 +45,19 @@ function TodayHighlights({ weather }) {
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           {(weather.length > 0)
-            ? (<HighlightCard title='Feels Like' stat={`${weather[0].main.feels_like}\u00b0F`}/>
+            ? (<HighlightCard title='Feels Like' stat={`${Math.round(weather[0].main.feels_like)}\u00b0F`}/>
             ) : ('')
           }
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           {(weather.length > 0)
-            ? (<HighlightCard title='Low' stat={`${weather[0].main.temp_min}\u00b0F`}/>
+            ? (<HighlightCard title='Low' stat={`${Math.round(weather[0].main.temp_min)}\u00b0F`}/>
             ) : ('')
           }
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           {(weather.length > 0)
-            ? (<HighlightCard title='High' stat={`${weather[0].main.temp_max}\u00b0F`}/>
+            ? (<HighlightCard title='High' stat={`${Math.round(weather[0].main.temp_max)}\u00b0F`}/>
             ) : ('')
           }
         </Grid>
