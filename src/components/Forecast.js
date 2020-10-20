@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Weather({cityName, country, weather}) {
+function Weather({cityName, country, weather, key}) {
   useStyles()
 
   const formatDateAndTime = (dateText) => {
@@ -59,9 +59,9 @@ function Weather({cityName, country, weather}) {
         ) : ('')
       }
       <Grid container spacing={2}> 
-        {weather.map((weatherItem) => (
-          weatherItem.weather.map((item, index) => (
-            <Grid item xs={12} md={6} lg={4}> 
+        {weather.map((weatherItem, index) => (
+          weatherItem.weather.map((item, index2) => (
+            <Grid item xs={12} md={6} lg={4} key={index}> 
               <ForecastCard 
                 img={process.env.PUBLIC_URL + `/weather-icons/${item.icon}.png`} 
                 desc={`${item.description}`}
@@ -69,7 +69,7 @@ function Weather({cityName, country, weather}) {
                 date={formatDateAndTime(weatherItem.dt_txt)}
                 city={cityName}
                 country={country}
-                key={index}
+                key={index2}
               />
             </Grid>
           ))
